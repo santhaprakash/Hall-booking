@@ -34,7 +34,7 @@ function Hall() {
           <h2>Booked ... !</h2>
           <h2>Booked by - {hallbook.name}</h2>
          
-          <p>Time -     {moment(hallbook.createdAt).format("LLLL")}</p>
+          <p>Time -     {moment(hallbook.createdAt.toDate()).format("LLLL")}</p>
           </div>:<h2>
             <div style={{display:'flex',justifyContent: 'center',alignItems: 'center'}}>
                
