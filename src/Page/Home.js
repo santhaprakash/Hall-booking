@@ -15,24 +15,24 @@ const useruid=localStorage.getItem('currentuser')
   setImg(localStorage.getItem('userimage'))
   setName(localStorage.getItem('username'))
  },[])
-         const addHandler=async()=>{   
-      for(var i=1;i<=28;i++){
-        if(i<10)
-        {
-          var day=`day0${i}`
-        }
-        else{
-          var day=`day${i}`
-        }
-        for(var j=1;j<=7;j++){
-          var hour=`${day}${j}`
-          await setDoc(doc(hallD,hour),{
-            booked:false,
-            name:""
-          }) 
-        }
-      }
-    }
+    //      const addHandler=async()=>{   
+    //   for(var i=1;i<=28;i++){
+    //     if(i<10)
+    //     {
+    //       var day=`day0${i}`
+    //     }
+    //     else{
+    //       var day=`day${i}`
+    //     }
+    //     for(var j=1;j<=7;j++){
+    //       var hour=`${day}${j}`
+    //       await setDoc(doc(hallD,hour),{
+    //         booked:false,
+    //         name:""
+    //       }) 
+    //     }
+    //   }
+    // }
     
  const handleSignout=()=>{
   localStorage.removeItem('currentuser');
@@ -45,7 +45,7 @@ const useruid=localStorage.getItem('currentuser')
     {
       useruid?<>
       <div style={{display:'flex',flexDirection: 'row',alignItems: 'center',justifyContent:'space-around'}}>
-      <button onClick={addHandler}>Hey</button>
+      {/* <button onClick={addHandler}>Hey</button> */}
         <div >
       <h4>Welcome  <h5>{name}</h5> </h4>
       </div>
