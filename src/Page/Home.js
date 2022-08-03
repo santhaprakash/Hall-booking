@@ -1,4 +1,4 @@
-import { doc, onSnapshot, setDoc } from 'firebase/firestore';
+import { collection, doc, onSnapshot, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -24,13 +24,13 @@ const useruid=localStorage.getItem('currentuser')
         else{
           var day=`day${i}`
         }
-        await setDoc(doc(hallA,day),{
-       })   
-        await setDoc(doc(hallA,day),{          
-        booked:false,
-        name:""
-       })
-       
+        for(var j=1;j<=7;j++){
+          var hour=`${day}${j}`
+          await setDoc(doc(hallD,hour),{
+            booked:false,
+            name:""
+          }) 
+        }
       }
     }
     
@@ -72,7 +72,7 @@ const useruid=localStorage.getItem('currentuser')
     />
     
         <h4>Selected Date :  {date.toDateString()}</h4>
-        <Link to={`/${hall}/day${date.toDateString().substring(8,11)}`}>
+        <Link to={`/${hall}/day${date.toDateString().substring(8,10)}/period`}>
           <button style={{padding:'14px',backgroundColor:'#3f51b5',
           border:'1px solid white',color:'white',borderRadius:'5px',cursor:'pointer'}}>Book now</button>
         </Link>

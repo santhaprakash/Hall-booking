@@ -7,8 +7,9 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Page/Home';
-import Book from './Page/Book';
-import Booked from './Page/Booked';
+// import Book from './Page/Book';
+// import Booked from './Page/Booked';
+import Period from './Page/Period';
 import Hall from './Page/Hall';
 
 function App() {
@@ -20,8 +21,12 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
         <Routes>
+          <Route path="/:hall/:id/period" element={<Period />} />
+        </Routes>
+        <Routes>
           <Route path="/:hall/:id" element={<Hall />} />
         </Routes>
+      
         {/* <Routes>
           <Route path="/:id" element={<Book />} />
         </Routes>
